@@ -1,4 +1,5 @@
 # How to Install LastOSLinux
+v1.0.0
 
 **Things you will need:**
 
