@@ -1,5 +1,16 @@
 <img width="477" height="131" alt="Image" src="https://github.com/user-attachments/assets/408d9ef2-bb64-4be4-a6a8-7bbc5e855853" />
 
+<!-- 
+Upload images to GitHub
+
+Create a new issue on GitHub.
+
+Drag an image into the comment field.
+
+Wait for the upload process to finish.
+
+Copy the URL and use it in your Markdown files on GitHub.
+ -->
 # How to Install LastOSLinux
 v1.0.0
 
