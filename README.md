@@ -24,6 +24,8 @@ goto https://html-preview.github.io/
 
 [BIOS keys list](docs/bioskeys.md)
 
+[Any issus](https://github.com/lastosdev/LastOSLinuxDocs/issues)
+
 
 for more information vist [LastOS Forums.](https://www.lastos.net/forum/index.php)
 
