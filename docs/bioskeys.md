@@ -1,4 +1,5 @@
 # BIOS / BOOT KEYS FOR (MOST) PC BRANDS
+<img width="477" height="131" alt="Image" src="https://github.com/user-attachments/assets/408d9ef2-bb64-4be4-a6a8-7bbc5e855853" />
 
 | BRAND | BIOS KEY | BOOT MENU |
 | :--- | :--- | :--- |

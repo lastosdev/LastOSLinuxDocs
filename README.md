@@ -7,10 +7,9 @@ https://github.com/lastosdev/LastOSLinuxDocs
  -->
 
 This is the location of LastOS Linux Docs
+* [How to install text](<docs/How to Install LastOSLinux.md>)
 
-[How to install](<docs/How to Install LastOSLinux.md>)
-
-[How to install pdf](<docs/How to Install LastOSLinux.pdf>)
+* [How to install pdf](<docs/How to Install LastOSLinux.pdf>)
 
 
 <!-- 
@@ -19,12 +18,12 @@ to view html in github
 goto https://html-preview.github.io/ 
 ***************************************
  -->
-[[How to install html](https://html-preview.github.io/?url=https://github.com/lastosdev/LastOSLinuxDocs/blob/main/docs/How%20to%20Install%20LastOSLinux.html)
+* [[How to install preview html](https://html-preview.github.io/?url=https://github.com/lastosdev/LastOSLinuxDocs/blob/main/docs/How%20to%20Install%20LastOSLinux.html)
 
 
-[BIOS keys list](docs/bioskeys.md)
+* Click here for [BIOS keys list](docs/bioskeys.md)
 
-[Any issus](https://github.com/lastosdev/LastOSLinuxDocs/issues)
+* Click here for errors or [any issues](https://github.com/lastosdev/LastOSLinuxDocs/issues)
 
 
 for more information vist [LastOS Forums.](https://www.lastos.net/forum/index.php)
