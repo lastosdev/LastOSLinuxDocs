@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>How to Install LastOSLinux.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="how-to-install-lastoslinux">How to Install LastOSLinux</h1>
+<p>v1.0.0</p>
+<p><strong>Things you will need:</strong></p>
+<ul>
+<li>A x64 Compatible PC/Laptop with 4GB+ of ram and 60GB+ HDD space.</li>
+<li>A USB stick with 8GB+ or larger (USB 3 if available).</li>
+<li>Access to BIOS to disable SecureBoot *</li>
+</ul>
+<p>* SecureBoot ~ Linux generally doesn’t work well with SecureBoot so this should be disabled in your BIOS before attempting to install Linux or install and Drives while in Linux (It can be re-enabled once it’s installed, but it’s still not recommended). To disable SecureBoot you will need to boot to BIOS when you first turn the PC on, this is achieved by pressing a key on the keyboard, usually Esc, F1 to F12 or the Del key, find SecureBoot and change it to Disabled, many PC’s will ask you to type in 4 numbers to make this change.</p>
+<p><strong>Where to get the LastOSLinux ISO:</strong></p>
+<p>First visit <a href="http://www.lastos.org/lastoslinux">www.lastos.org/lastoslinux</a> to read about this OS, feel free to click the LastOS icon on the sidebar to go to the forums where you can ask questions or get support, it may even have the answers you need in from other peoples questions.</p>
+<p>On the page above in the Download ISO section is a Download Now button. Clicking this will open to a sourceforge link where it is hosted: <a href="https://sourceforge.net/projects/lastoslinux/files/ISOs/">https://sourceforge.net/projects/lastoslinux/files/ISOs/</a> if you click the latest dated ISO you will be able to download the very latest public version of LastOSLinux to either burn to DVD or make a bootable USB to install from.</p>
+<p><strong>Making a bootable USB:</strong></p>
+<p>Before you can make a bootable USB you will need the above ISO and a USB stick or portable device that is 8GB or larger.</p>
+<p>* Note: All the data on the USB will be deleted so make sure you have any important files backed up if you need to keep any of them.</p>
+<p>From Windows;<br>
+If you are using windows the very best option to make a Bootable USB is to use the Rufus tool, you can also use Ventoy if you're more experienced in computers and understand that making a Ventoy USB can boot from any ISO file you copy to it. Watch a youtube video or google how to use Ventoy if you need to use this method.</p>
+<p>Rufus Steps;</p>
+<ol>
+<li>Download <a href="https://rufus.ie/downloads/">https://rufus.ie/downloads/</a> latest portable version (rufus-4.7p.exe at the time of creating this document).</li>
+<li>Next place the 8GB+ USB into a fast USB slot in your computer (The blue ports or the ones that say SS on them are USB3 and could prepare the USB stick a lot faster than using a standard USB2 port if the USB Stick is also USB3 compatible.</li>
+<li>Run rufus-4.7p.exe</li>
+<li>In the top drop down combo box click the down arrow on the far right, then select the USB stick you have inserted (check the size matches and the brand/name is the same as shown in “This PC”, to make sure you have selected the correct one. By default it hides internal disks, but any USB can be selected to be erased so be careful).</li>
+<li>In the next “Boot selection” press the “SELECT” combo box, browse for the downloaded ISO from above “LastOSLinux_amd64_2025-03-22_Public_Final.iso”. This step may ask to download the syslinux boot files it needs to create a bootable USB, press Yes/Allow when asked.</li>
+<li>Change the “Partition scheme” to MBR if it is set to GPT (GPT can work, but MBR is more compatible and will work with more PC’s)</li>
+<li>Press Start and follow the warning/info prompts and allow it to complete building the bootable USB.</li>
+</ol>
+<p><strong>Follow a video guide to making a Bootable USB:</strong><br>
+<a href="https://youtu.be/P4yjeVHYmSg">https://youtu.be/P4yjeVHYmSg</a></p>
+<p><strong>Follow a video for making a Ventoy Bootable USB:</strong> (To do this in Windows you can download the windows version of Ventoy)<br>
+<a href="https://youtu.be/PHkgpoYOpsM?si=fX_y8qdaAV7TTO0b">https://youtu.be/PHkgpoYOpsM?si=fX_y8qdaAV7TTO0b</a></p>
+<p><strong>Follow a Video Installation Guide:</strong><br>
+<a href="https://youtu.be/3U7ougYcCZs">https://youtu.be/3U7ougYcCZs</a></p>
+<p><strong>Booting from the USB stick:</strong></p>
+<ol>
+<li>On the PC you want to install first turn it off and plug in the USB stick created above.</li>
+<li>Make sure SecureBoot has been disabled in your BIOS (LastOSLinux can not be installed while SecureBoot is enabled).</li>
+<li>When you first turn on the PC/Laptop start tapping Esc, F1 to F12 or the Del key to bring up the boot menu. It sometimes has which key to press to change the boot order, some people say just run your finger along all of them but this seems like it could boot the UEFI or BIOS instead of just the boot menu. If you do go into some BIOS’s it also allows you to pick the boot device one time, which can also work. If you still are unable to get it to boot, as a last resort you can change the boot order in BIOS to put the USB first, some older machines may fail to write the HDD boot file to the HDD and would make it unable to boot without the USB inserted (this doesn’t affect newer machines).</li>
+<li>When the boot menu shows pick “LastOSLinux LiveOS”, this is the OS you can start to check everything is working properly before you install the OS to your computer, it is also used to start the installer.</li>
+</ol>
+<p><strong>LiveOS/Install:</strong></p>
+<p>Once the LiveOS starts you should be on the desktop with an Icon “Install LastOSLinux”. Before you start this install, go to the Network/WiFi icon near the clock and log into your network so you have internet. Try adjusting the volume and listen if the sound is working. If you can see, hear and use the internet then you should be right to proceed with the installation.</p>
+<ol>
+<li>
+<p>Double click the “Install LastOSLinux” icon on the desktop, this may take a couple of minutes to begin.</p>
+</li>
+<li>
+<p>First check the Location is set correctly by clicking the map or manually selecting it from the named places.</p>
+</li>
+<li>
+<p>Pick the correct Keyboard layout for you, usually it will best guess the keyboard from the location - which is incorrect when using Australia as your Location, we use the US keyboard layout so you will need to change from “English (Australian)” to “English (US)” before you press Next.</p>
+</li>
+<li>
+<p>Next is the partitioning of the internal HDD’s to where you will be installing the OS, this is custom for each person depending on your needs, explained below *</p>
+</li>
+<li>
+<p>* User / Owner - would set the Name to the full owners name<br>
+* Login Name - usually the first name or first initial and last name or a nickname (all lowercase with no capital letters or spaces or special characters)<br>
+* Computer/PC Name is shown on the Network (usually the first name with pc or a number written after it (do not use special characters or spaces)<br>
+* Set a password for the user account (you can use a very simple password for home users if you do not have important documents and they are backed up separately off the computer, especially if you have enabled 2FA for any banking or important tasks), I generally set the password to “x” on my installs and let the user change them once they receive their PC back.</p>
+<p>Press Next and a summary screen will be shown, confirm you are happy and proceed with the installation.</p>
+</li>
+</ol>
+<p>* To Partition your computer HDD (best practices);</p>
+<p>Many people will often just pick Erase and use the whole HDD for their installation, this has the downside of making any future OS installations require you to backup any important settings and documents before you reinstall, it also means you are not able to properly run a “TimeShift” backup without extra work excluding it from being backed up as well. To make things easier I instead make the OS separate to the Home folder (Users Documents and Settings), allowing you to reinstall/restore/recover any Linux OS without having to backup/restore your files - this does not mean you do not have to keep external backups, just that you won’t have to restore from your backups after a clean installed PC.</p>
+<ol>
+<li>Pick Manual partitioning</li>
+<li>Check the disk it has selected up the top right is the correct disk for your OS</li>
+<li>If you are starting with a fresh configuration you are best to remove all partitions from the disk by pressing “New Partition Table”, if you are reinstalling you can just set the mount points from your previous Linux OS and make sure “Format” isn’t selected where you do not wish it to remove files from that partition.</li>
+<li>Starting from a fresh Partition Table (or picking existing partitions), Create and set the first partition to be 1.6GB (Change “File System” to “fat32”) then you need to tick the “boot” option from the flags list below it. The last step is you set the mount point to “/boot/efi”, this makes the UEFI work, if your PC is older (no UEFI) then just do NOT set a mount point at all in the boot partition! It is enough to just set the “boot” Flag for it to be used.</li>
+<li>Create and set the next partition to be 60GB for a 128GB HDD, or 90GB if 256GB HDD or bigger, the OS will usually never grow to be above 40 or 50GB, but it doesn’t hurt to have a little space for it to do updates/upgrades etc, if you have even bigger disks you can make it 120GB to make it fully future proof. Set “File System” to “ext4” and change the Mount Point to “/” a single forward slash, this is the root of the main OS and if you do nothing else and use all of the HDD space left it will be the same as a “Erase” install not a “Custom” install. Do NOT pick any flags for this partition.</li>
+<li>As we want the Home / Users files off the main OS Partition we Create another partition with the remaining space, Change “File System” to “ext4” and set the Mount Point to “/home” (Make sure the Format option isn’t selected unless you want it to erase the user files already on that partition!</li>
+</ol>
+<p>Once your OS has successfully installed it will ask if you want to reboot, at this stage you can remove the USB from the PC and LastOSLinux will continue once it first boots to the desktop - everything it needs is pre-copied off the USB during the initial setup.</p>
+<p>LastOSLinux is designed to layer on top of the underlying Operating system base, this means it will be able to be upgraded the same as the Vanilla (original) OS, currently only Linux Mint is used for LastOSLinux ISO’s but in the future this will include Nobara, Fedora, BigLinux and others as I find the best methods to do so.</p>
+<p>Linux Mint Base: <a href="https://linuxmint.com/">https://linuxmint.com/</a><br>
+Upgrade Help: <a href="https://linuxmint-user-guide.readthedocs.io/en/latest/upgrade.html">https://linuxmint-user-guide.readthedocs.io/en/latest/upgrade.html</a></p>
+<p><strong>Run LLStore to install extra Apps and Games or apply tweaks:</strong></p>
+<p>Running LLStore from the Desktop/Menu or the USB you are able to pick what you want to install extra to the OS, many of the items included will run on any Linux Distribution, the Windows based ones can be installed through Wine or even in Windows, I made LLStore fully portable and able to be ran on most OS's</p>
+<p><a href="https://youtu.be/4xF1kvYtbv4">https://youtu.be/4xF1kvYtbv4</a></p>
+<p><strong>TimeShift Backups:</strong></p>
+<p>You can use the included Tool named TimeShift to take incremental Images of your running OS to restore from the LiveOS, you can also hold shift as your PC tries to boot and access the Advanced - Recovery environment to restore any of these images back over the top.</p>
+<p>Watch Video of TimeShift capture and a restore:<br>
+<a href="https://youtu.be/-58j5eTapmY">https://youtu.be/-58j5eTapmY</a></p>
+
+</body>
+</html>
